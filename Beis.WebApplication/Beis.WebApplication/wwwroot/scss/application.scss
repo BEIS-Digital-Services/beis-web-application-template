@@ -1,0 +1,31 @@
+﻿address {
+    @extend .govuk-body;
+    font-style: normal;
+}
+
+.letter {
+    text-transform: capitalize;
+}
+
+.supplier-section {
+    hr {
+        margin-top: govuk-spacing(6);
+        margin-bottom: govuk-spacing(3);
+    }
+}
+
+.govuk-list--alphabet {
+    display: flex;
+    flex-flow: row wrap;
+    gap: govuk-spacing(6);
+
+    li {
+        text-transform: capitalize;
+        width: 1rem;
+    }
+}
+
+.beis-inset-info {
+    border-color: govuk-colour("light-blue");
+    background-color: govuk-tint(govuk-colour("light-blue"), 90);
+}

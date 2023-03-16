@@ -1,0 +1,39 @@
+on:
+  push:
+    branches: [ main, release/* ] 
+  workflow_dispatch:
+
+env:
+  GITHUB_ORGANIZATION: BEIS-Digital-Services
+  PROJECT_NAME: Beis.WebApplication
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Update NuGet package
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+         fetch-depth: 0
+
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1      
+        with:
+          dotnet-version: 6.0.x
+      #- name: Create output directory
+      #  run: |
+      #   mkdir -p ${{env.PROJECT_NAME}}
+      #   mkdir ${{env.PROJECT_NAME}}/out
+
+      - name: Build solution and generate NuGet package
+        run: |  
+          #cd ${{env.PROJECT_NAME}}
+          dotnet build TemplatePack.csproj
+          dotnet pack -c Release -o out TemplatePack.csproj
+          #dotnet pack -c Release -o out  
+
+      - name: Push generated package to GitHub registry
+        run:
+          dotnet nuget push ${GITHUB_WORKSPACE}/out/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.BEIS_GITHUB_TOKEN}}

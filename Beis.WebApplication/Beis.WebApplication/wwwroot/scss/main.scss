@@ -1,0 +1,13 @@
+$govuk-new-link-styles: true;
+$govuk-global-styles: true;
+$govuk-assets-path: "/lib/govuk/assets/";
+
+@import "../../node_modules/govuk-frontend/govuk/all";
+
+@import "components/all";
+@import "application.scss";
+
+.govuk-error-message:empty {
+    display: none;
+}
+

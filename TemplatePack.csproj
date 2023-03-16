@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!--<PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>-->
+	<PropertyGroup>
+		<PackageType>Template</PackageType>
+		<PackageVersion>1.0</PackageVersion>
+		<PackageId>Beis.WebApplication</PackageId>
+		<Title>Beis Web Application Template.</Title>
+		<Authors>BEIS</Authors>
+		<Description>Beis Web Application Template.</Description>
+		<PackageTags>dotnet-new;templates;beis</PackageTags>
+
+		<TargetFramework>netstandard2.0</TargetFramework>
+
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<NoWarn>$(NoWarn);NU5128</NoWarn>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<Content Include="Beis.WebApplication\**\*" Exclude="Beis.WebApplication\**\bin\**;Beis.WebApplication\**\obj\**" />
+		<Compile Remove="**\*" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,15 @@
+{
+  "name": "beis.webapplication",
+  "version": "1.0.0",
+  "description": "BEIS",
+  "scripts": {
+    "build": "sass wwwroot/scss/main.scss wwwroot/css/main.css --style=compressed",
+    "watch": "sass --watch wwwroot/scss/main.scss wwwroot/css/main.css --style=expanded"
+  },
+  "dependencies": {
+    "govuk-frontend": "4.4.1",
+    "sass": "^1.56.1"
+  },
+  "author": "BEIS",
+  "license": "ISC"
+}

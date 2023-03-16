@@ -1,0 +1,29 @@
+﻿@model EmailAddressViewModel
+@{
+  ViewData["Title"] = "What is your email address?";
+}
+
+  <nav class="govuk-!-margin-bottom-9">
+    <a class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-0" href="/">Back</a>
+  </nav>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" asp-route="@RouteNames.ApplicantEmailAddressPage" method="post">
+        <div class="govuk-form-group" highlight-error-for="EmailAddress" error-class="govuk-form-group--error">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" asp-for="EmailAddress">
+              What is your email address?
+            </label>
+          </h1>
+          <p class="govuk-body">If your application is successful, we will send your software discount link to this address.</p>
+          <div id="email-hint" class="govuk-hint">Work email address</div>
+          @if (!ViewData.ModelState.IsValid)
+          {
+            <span class="govuk-error-message">Enter an email address in the correct format, like name@example.com</span>
+          }
+          <input asp-for="EmailAddress" class="govuk-input govuk-!-width-three-quarters" type="text" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+        </div>
+        <button ga-data-action-id="btn-sme-work-email-continue" class="govuk-button work-email" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>

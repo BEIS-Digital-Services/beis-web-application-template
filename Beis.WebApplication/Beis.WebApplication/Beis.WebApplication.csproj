@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>5d17c982-3b2d-436d-8160-0348a7e287c5</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="npm install" />
+		<Exec Command="npm run build" />
+	</Target>
+
+	<ItemGroup>
+	  <Compile Remove="wwwroot\lib\govuk\common\**" />
+	  <Compile Remove="wwwroot\lib\govuk\components\**" />
+	  <Compile Remove="wwwroot\lib\govuk\core\**" />
+	  <Compile Remove="wwwroot\lib\govuk\helpers\**" />
+	  <Compile Remove="wwwroot\lib\govuk\macros\**" />
+	  <Compile Remove="wwwroot\lib\govuk\objects\**" />
+	  <Compile Remove="wwwroot\lib\govuk\overrides\**" />
+	  <Compile Remove="wwwroot\lib\govuk\settings\**" />
+	  <Compile Remove="wwwroot\lib\govuk\tools\**" />
+	  <Compile Remove="wwwroot\lib\govuk\utilities\**" />
+	  <Compile Remove="wwwroot\lib\govuk\vendor\**" />
+	  <Content Remove="wwwroot\lib\govuk\common\**" />
+	  <Content Remove="wwwroot\lib\govuk\components\**" />
+	  <Content Remove="wwwroot\lib\govuk\core\**" />
+	  <Content Remove="wwwroot\lib\govuk\helpers\**" />
+	  <Content Remove="wwwroot\lib\govuk\macros\**" />
+	  <Content Remove="wwwroot\lib\govuk\objects\**" />
+	  <Content Remove="wwwroot\lib\govuk\overrides\**" />
+	  <Content Remove="wwwroot\lib\govuk\settings\**" />
+	  <Content Remove="wwwroot\lib\govuk\tools\**" />
+	  <Content Remove="wwwroot\lib\govuk\utilities\**" />
+	  <Content Remove="wwwroot\lib\govuk\vendor\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\common\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\components\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\core\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\helpers\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\macros\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\objects\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\overrides\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\settings\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\tools\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\utilities\**" />
+	  <EmbeddedResource Remove="wwwroot\lib\govuk\vendor\**" />
+	  <None Remove="wwwroot\lib\govuk\common\**" />
+	  <None Remove="wwwroot\lib\govuk\components\**" />
+	  <None Remove="wwwroot\lib\govuk\core\**" />
+	  <None Remove="wwwroot\lib\govuk\helpers\**" />
+	  <None Remove="wwwroot\lib\govuk\macros\**" />
+	  <None Remove="wwwroot\lib\govuk\objects\**" />
+	  <None Remove="wwwroot\lib\govuk\overrides\**" />
+	  <None Remove="wwwroot\lib\govuk\settings\**" />
+	  <None Remove="wwwroot\lib\govuk\tools\**" />
+	  <None Remove="wwwroot\lib\govuk\utilities\**" />
+	  <None Remove="wwwroot\lib\govuk\vendor\**" />
+	</ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+	  <PackageReference Include="Beis.Common" Version="6.0.2" />
+	  <PackageReference Include="DataAnnotationsExtensions" Version="5.0.1.27" />
+	  <PackageReference Include="FluentAssertions" Version="6.7.0" />
+	  <PackageReference Include="FluentResults" Version="3.15.1" />
+	  <PackageReference Include="FluentResults.Extensions.FluentAssertions" Version="2.1.0" />
+	  <PackageReference Include="MediatR" Version="11.1.0" />
+	  <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+	  <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
+	  <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
+	  <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="6.0.11" />
+	  <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.11" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.AzureAppConfiguration" Version="5.2.0" />
+	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.ApplicationInsights" Version="2.21.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.11" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+	  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.8" />
+	  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+	  <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+	  <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+	  <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
+	  <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+  </ItemGroup>
+
+</Project>

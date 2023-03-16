@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "You've confirmed your email address";
+}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">You've confirmed your email address</h1>
+            <p class="govuk-body">You can now apply for your software discount.</p>
+            <div class="govuk-inset-text">If you apply, we will check your company details. This will not affect your credit score.</div>
+            <form class="form" asp-action="Index" asp-controller="CheckEligibility">
+                <input type="hidden" id="company-number" value="">
+                <button ga-data-action-id="btn-sme-experian-check-success" class="govuk-button" id="experian-check" data-module="govuk-button">Apply</button>
+            </form>
+        </div>
+    </div>

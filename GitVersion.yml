@@ -1,0 +1,19 @@
+next-version: 6.0
+mode: ContinuousDeployment
+tag-prefix: '[vV]'
+increment: Inherit
+branches:
+  master:
+    regex: master$
+    increment: Patch
+  main:
+    regex: main$
+    increment: Patch
+  release:
+    regex: r(elease$|(eleases)?[-/])
+    mode: ContinuousDelivery
+    increment: Minor
+    is-release-branch: true
+
+
+    #https://stackoverflow.com/questions/49765756/c-net-how-to-generate-and-increase-package-version-automatically-especially
