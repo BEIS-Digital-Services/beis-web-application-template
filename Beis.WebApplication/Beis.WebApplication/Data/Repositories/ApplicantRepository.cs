@@ -23,7 +23,10 @@ namespace Beis.WebApplication.Data.Repositories
         {
             var applicant = new Applicant
             {
-                full_name = dto.ApplicantName
+                full_name = dto.ApplicantName,
+                email_address = dto.ApplicantEmailAddress
+               
+                
                 
             };
             return await base.CreateAsync(applicant);

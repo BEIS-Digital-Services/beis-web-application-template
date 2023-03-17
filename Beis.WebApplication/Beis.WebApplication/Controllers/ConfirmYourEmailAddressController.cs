@@ -14,8 +14,8 @@ namespace Beis.WebApplication.Controllers
         public async Task<IActionResult> Index(bool resend)
         {
             var model = base.LoadDtoAndModelFromSession();
-            await _applicantService.AddApplicantToDbAndGenerateVerificatonLink(dto);
-            return View(model);
+            var result = await _applicantService.LoadAplicantAndGenerateVerificationLinkAsync(dto);
+            return result.IsFailed ? View("Error") : View(model);
         }
 
         public override EmailAddressViewModel MapDtoToModel(EmailAddressViewModel model)

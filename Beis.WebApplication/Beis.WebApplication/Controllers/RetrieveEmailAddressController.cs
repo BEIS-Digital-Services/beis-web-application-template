@@ -1,36 +1,29 @@
 ﻿
 namespace Beis.WebApplication.Controllers
 {
-    public class ApplicantEmailAddressController : BaseController<EmailAddressViewModel>
+    public class RetrieveEmailAddressController : BaseController<EmailAddressViewModel>
     {
-        private readonly IApplicantService applicantService;
-
-        public ApplicantEmailAddressController(ILogger<ApplicantEmailAddressController> logger, IHttpContextAccessor httpContextAccessor, ISessionService sessionService, IApplicantService applicantService) : base(logger, httpContextAccessor, sessionService)
+        public RetrieveEmailAddressController(ILogger<ApplicantEmailAddressController> logger, IHttpContextAccessor httpContextAccessor, ISessionService sessionService) : base(logger, httpContextAccessor, sessionService)
         {
-            this.applicantService = applicantService;
         }
 
-        [HttpGet(RoutePaths.ApplicantEmailAddressPage, Name = RouteNames.ApplicantEmailAddressPage)]
+        [HttpGet(RoutePaths.RetrieveEmailAddressPage, Name = RouteNames.RetrieveEmailAddressPage)]
         public IActionResult Index()
         {
             var model = base.LoadDtoAndModelFromSession();
             return View(model);
         }
         
-        [HttpPost(RoutePaths.ApplicantEmailAddressPage, Name = RouteNames.ApplicantEmailAddressPage)]
+        [HttpPost(RoutePaths.RetrieveEmailAddressPage, Name = RouteNames.RetrieveEmailAddressPage)]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Index(EmailAddressViewModel model)
+        public IActionResult Index(EmailAddressViewModel model)
         {
             if (!ModelState.IsValid || string.IsNullOrWhiteSpace(model.EmailAddress) || base.StoreDtoAndModelToSession(model).IsFailed) // model state validity evaluated incorrectly in unit test!
             {
                 return View(nameof(Index), model);
             }
-            var response = await applicantService.CreateApplicantAsync(dto);
-            if(response.IsFailed)
-            {
-                throw new Exception(response.Errors.FirstOrDefault().Message);
-            }
+            
             return RedirectToRoute(RouteNames.ConfirmEmailAddressPage);
         }
 

@@ -11,7 +11,9 @@ namespace Beis.WebApplication.Infrastructure
         public const string CookiesPage = "cookies";
         public const string CookieSettingsPage = "CookieSettingsPage";
         public const string SessionExpiredPage = "SessionExpiredPage";
+        public const string ApplicantFullNamePage = "ApplicantFullNamePage";
         public const string ApplicantEmailAddressPage = "ApplicantEmailAddressPage";
+        public const string RetrieveEmailAddressPage = "RetrieveEmailAddressPage";
         public const string VerifyEmailAddressPage = "VerifyEmailAddressPage";
         public const string ConfirmEmailAddressPage = "ConfirmEmailAddressPage";
         public const string MyAccountPage = "MyAccountPage";
@@ -31,7 +33,9 @@ namespace Beis.WebApplication.Infrastructure
         public const string CookiesPage = "cookies";
 		public const string CookieSettingsPage = "home/cookies";
 		public const string SessionExpiredPage = "session-expired";
+        public const string ApplicantFullNamePage = "what-is-your-full-name";
         public const string ApplicantEmailAddressPage = "what-is-your-email-address";
+        public const string RetrieveEmailAddressPage = "login";
         public const string ConfirmEmailAddressPage = "confirm-your-email-address";
         public const string VerifyEmailAddressPage = CommonConstants.VerifyEmailAddressPath;
         public const string MyAccountPage = "welcome-back-to-your-account";
