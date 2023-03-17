@@ -23,7 +23,7 @@ namespace Beis.WebApplication.Data.Repositories
         {
             var applicant = new Applicant
             {
-                ApplicantName = dto.ApplicantName
+                full_name = dto.ApplicantName
                 
             };
             return await base.CreateAsync(applicant);
