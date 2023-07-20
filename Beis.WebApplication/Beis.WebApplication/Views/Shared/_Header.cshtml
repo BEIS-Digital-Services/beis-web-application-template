@@ -14,14 +14,26 @@
                     <span class="govuk-header__logotype-text">
                         GOV.UK
                     </span>
+                    <span class="govuk-header__product-name">
+                        <a asp-route="@RouteNames.HomePage" class="govuk-header__link govuk-header__service-name">
+                            @WebsiteConstnats.ProgramName
+                        </a>
+                    </span>
                 </span>
+
             </a>
         </div>
+     
+
         <div class="govuk-header__content">
-            <a asp-route="@RouteNames.HomePage" class="govuk-header__link govuk-header__service-name">
-                @WebsiteConstnats.ProgramName
-            </a>
-        </div>
+            <nav aria-label="Top Level Navigation" class="govuk-header__navigation govuk-header__navigation--end">
+                <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation Menu" hidden="">Menu</button>
+                <ul id="navigation" class="govuk-header__navigation-list">
+                    <li class="govuk-header__navigation-item"><a class="govuk-header__link" href="https://docs.cloud.service.gov.uk/">Documentation</a></li>
+                    <li class="govuk-header__navigation-item"><a class="govuk-header__link" href="https://admin.london.cloud.service.gov.uk/support">Support</a></li>
+                </ul>
+            </nav>
+         </div>
     </div>
 </header>
 <div class="govuk-width-container">
