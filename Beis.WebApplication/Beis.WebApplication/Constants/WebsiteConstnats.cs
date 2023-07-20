@@ -2,6 +2,6 @@
 {
 	public class WebsiteConstnats
 	{
-		public const string ProgramName = "Digital Paas Landing Page";
+		public const string ProgramName = "ProgramNameValue";
 	}
 }
